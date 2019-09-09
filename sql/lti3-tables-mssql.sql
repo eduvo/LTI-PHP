@@ -24,16 +24,17 @@ CREATE TABLE lti2_consumer (
 );
 
 CREATE TABLE lti2_nonce (
-  consumer_pk int IDENTITY NOT NULL,
+  consumer_pk int NOT NULL,
   value varchar(50) NOT NULL,
-  expires datetime2 NOT NULL,
-  PRIMARY KEY (consumer_pk, value)
+  expires datetime2 NOT NULL
 );
 
-ALTER TABLE lti2_nonce
-  ADD CONSTRAINT lti2_nonce_lti2_consumer_FK1
-  FOREIGN KEY (consumer_pk)
-  REFERENCES lti2_consumer (consumer_pk);
+ALTER TABLE [dbo].[lti2_nonce] ADD CONSTRAINT [PK__lti2_non__02DEF19CFB2ACF42] PRIMARY KEY CLUSTERED  ([consumer_pk], [value])
+GO
+-- Foreign Keys
+
+ALTER TABLE [dbo].[lti2_nonce] ADD CONSTRAINT [lti2_nonce_lti2_consumer_FK1] FOREIGN KEY ([consumer_pk]) REFERENCES [dbo].[lti2_consumer] ([consumer_pk])
+GO
 
 CREATE TABLE lti2_context (
   context_pk int NOT NULL IDENTITY,
