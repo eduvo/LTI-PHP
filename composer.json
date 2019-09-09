@@ -1,6 +1,6 @@
 {
-  "name": "celtic/lti fork for Atlas",
-  "description": "PHP class library for building LTI integrations",
+  "name": "eduvo/lti",
+  "description": "PHP class library for building LTI integrations -  fork for Atlas",
   "keywords": ["LTI"],
   "homepage": "https://github.com/eduvo/LTI-PHP",
   "type": "library",
